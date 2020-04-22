@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "ClickedOrNot",
+  "description": "To click or not to click",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://www.google.ru/*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["*://*/*", "tabs", "activeTab", "storage"]
+}
